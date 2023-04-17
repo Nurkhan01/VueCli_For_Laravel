@@ -12,16 +12,16 @@ const routes = [
     name: 'about',
     component: () => import('../views/AboutView.vue')
   },
-  {
-    path: '/login',
-    name: 'login',
-    component: () => import('../views/LoginView.vue')
-  },
-  {
-    path: '/registration',
-    name: 'registration',
-    component: () => import('../views/RegistrationView.vue')
-  }
+  // {
+  //   path: '/login',
+  //   name: 'login',
+  //   component: () => import('../views/LoginView.vue')
+  // },
+  // {
+  //   path: '/registration',
+  //   name: 'registration',
+  //   component: () => import('../views/RegistrationView.vue')
+  // }
 ]
 
 const router = createRouter({
