@@ -8,7 +8,7 @@ import store from './store'
 
 import PrimeVue from 'primevue/config'
 
-import "primevue/resources/themes/saga-blue/theme.css";
+import "primevue/resources/themes/lara-light-indigo/theme.css";
 import "primevue/resources/primevue.min.css";
 import "primeicons/primeicons.css";
 
@@ -21,6 +21,8 @@ import Row from 'primevue/row'
 
 import Paginator from 'primevue/paginator'
 import InputText from 'primevue/inputtext'
+import Dialog from 'primevue/dialog'
+import Dropdown from 'primevue/dropdown'
 //createApp(App).use(store).use(router, PrimeVue, PrimeIcons).mount('#app')
 
 const app = createApp(App)
@@ -35,5 +37,7 @@ app.component('Row', Row)
 
 app.component('Paginator', Paginator)
 app.component('InputText', InputText)
+app.component('Dialog', Dialog)
+app.component('Dropdown', Dropdown)
 
 app.mount('#app')
