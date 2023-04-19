@@ -32,7 +32,11 @@
                         <ul>
                             <li v-for="(item, index) in data.roles"
                                 :key="index">
-                                {{ item.item_name }}
+
+                                <span v-if="item.id">{{ item.item_name }}</span>
+                                <span v-else>
+                                    Не выбрано
+                                </span>
                             </li>
                         </ul>
                     </template>
@@ -76,7 +80,7 @@
                             </Column>
                             <Column header="Удалить" style="width: 25%">
                                 <template #body="{data, index}">
-                                    <Button severity="danger" icon="pi pi-trash" @click="deleteRole(data.id, index)" rounded/>
+                                    <Button severity="danger" icon="pi pi-trash" @click="deleteRole(data, index)" rounded/>
                                 </template>
                             </Column>
                         </DataTable>
@@ -149,8 +153,8 @@ export default {
             console.log(this.users.find(i=>i.id == this.userId), 'user')
 
         },
-        deleteRole(id, index) {
-            if (id) {
+        deleteRole(data, index) {
+            if (data.id && data.isAdded != 1) {
                 this.DELETE_ROLE()
             }
             else {
@@ -161,7 +165,8 @@ export default {
         addRole() {
             this.users.find(i=>i.id == this.userId).roles.push({
                 id: null,
-                item_name: null
+                item_name: null,
+                isAdded: 1,
             })
             console.log(this.users.find(i=>i.id == this.userId), 'user')
         },
