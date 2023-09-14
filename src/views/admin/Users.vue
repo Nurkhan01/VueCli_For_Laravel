@@ -78,11 +78,13 @@
                                     </span>
                                 </template>
                             </Column>
-                            <Column header="Удалить" style="width: 25%">
+                            <Column header="Действия" style="width: 25%">
                                 <template #body="{data, index}">
-                                    <Button severity="danger" icon="pi pi-trash" @click="deleteRole(data, index)" rounded/>
+                                    <Button class="me-2" severity="danger" icon="pi pi-trash" @click="deleteRole(data, index)" rounded/>
+                                    <Button icon="pi pi-save" @click="saveRole()" rounded/>
                                 </template>
                             </Column>
+
                         </DataTable>
                     </div>
 
